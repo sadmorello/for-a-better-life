@@ -10,9 +10,11 @@ public class SchedulingController : ControllerBase
     private static List<Scheduling> scheduelings = new List<Scheduling>();
 
     [HttpPost]
-    public void CreateScheduling([FromBody] Scheduling scheduling)
+    public IActionResult CreateScheduling([FromBody] Scheduling scheduling)
     {
         scheduelings.Add(scheduling);
+
+        return CreatedAtAction(nameof(GetSchedulingById), new { id = scheduling.Id }, scheduling);
     }
 
     [HttpGet]
@@ -22,9 +24,13 @@ public class SchedulingController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public Scheduling? GetSchedulingById(int id)
+    public IActionResult GetSchedulingById(int id)
     {
-        return scheduelings.FirstOrDefault(scheduling => scheduling.Id == id);
+        Scheduling? scheduling = scheduelings.FirstOrDefault(scheduling => scheduling.Id == id);
+
+        if (scheduling == null) return NotFound();
+        
+        return Ok(scheduling);
     }
 
 }
