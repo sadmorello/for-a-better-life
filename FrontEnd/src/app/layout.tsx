@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/Layout/Sidebar";
 import { Box, Flex, Grid, GridItem } from "@chakra-ui/react";
 
 const inter = Inter({ subsets: ["latin"] });
