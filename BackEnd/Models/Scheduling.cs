@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace BackEnd.Models;
 
-public class Scheduling
+public class Schedule
 {
     [Key]
     [Required]

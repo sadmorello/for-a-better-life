@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, Input, FormControl, FormLabel } from '@chakra-ui/react';
-import { createScheduling } from '@/app/api/Scheduling/Create';
+import { createSchedule } from '@/app/api/Schedule/Create';
 
 
 const ScheduleForm = ({ onClose }: { onClose: () => void }) => {
@@ -18,7 +18,7 @@ const ScheduleForm = ({ onClose }: { onClose: () => void }) => {
 
         try {
             const schedule = { client, supplier, date };
-            await createScheduling(schedule);
+            await createSchedule(schedule);
             alert('Agendamento criado com sucesso!');
             onClose();
         } catch (error) {

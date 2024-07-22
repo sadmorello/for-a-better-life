@@ -2,7 +2,7 @@ import { useDisclosure, Button, Modal, ModalOverlay, ModalContent, ModalHeader, 
 import React from "react"
 import ScheduleForm from "./FormCreate"
 
-const ModalCreateScheduling = () => {
+const ModalCreateSchedule = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const initialRef = React.useRef(null)
@@ -32,4 +32,4 @@ const ModalCreateScheduling = () => {
     )
 }
 
-export default ModalCreateScheduling;
+export default ModalCreateSchedule;

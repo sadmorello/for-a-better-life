@@ -1,8 +1,8 @@
 'use client'
 
-import ModalCreateScheduling from "@/components/Scheduling/ModalCreate";
+import ModalCreateSchedule from "@/components/Schedule/ModalCreate";
 import { Button, ButtonGroup } from "@chakra-ui/button";
-import { Text, Card, CardBody, CardFooter, Container, Flex, Heading, Stack, Box, Spacer } from "@chakra-ui/react";
+import { Text, Card, CardBody, CardFooter, Flex, Heading, Stack, Spacer } from "@chakra-ui/react";
 import React from "react";
 
 export default function Schedules() {
@@ -11,7 +11,7 @@ export default function Schedules() {
             <Flex p={5}>
                 <Heading>Agendamentos</Heading>
                 <Spacer />
-                <ModalCreateScheduling />
+                <ModalCreateSchedule />
             </Flex>
 
             <Card variant='outline'>
