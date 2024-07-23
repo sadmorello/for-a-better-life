@@ -2,9 +2,12 @@ import { useDisclosure, Button, Modal, ModalOverlay, ModalContent, ModalHeader, 
 import React from "react"
 import ScheduleForm from "./FormCreate"
 
-const ModalCreateSchedule = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+interface ModalCreateScheduleProps {
+    fetchSchedules: () => void;
+}
 
+const ModalCreateSchedule: React.FC<ModalCreateScheduleProps> = ({ fetchSchedules }) => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
     const initialRef = React.useRef(null)
 
     return (
@@ -21,7 +24,7 @@ const ModalCreateSchedule = () => {
                     <ModalHeader>Criar Agendamento</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody pb={6}>
-                        <ScheduleForm onClose={onClose} />
+                        <ScheduleForm onClose={onClose} fetchSchedules={fetchSchedules} />
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={onClose}>Cancel</Button>

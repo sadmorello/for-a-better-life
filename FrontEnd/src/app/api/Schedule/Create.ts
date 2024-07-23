@@ -6,11 +6,10 @@ interface Schedule {
     date: string
 }
 
-export const createSchedule = async (scheduling: Schedule) => {
-    try {
-        const response = await api.post('/schedule', scheduling);
+export const createSchedule = (scheduling: Schedule) => {
+    return api.post('/schedule', scheduling).then(response => {
         return response.data;
-    } catch (error) {
+    }).catch(error => {
         throw error;
-    }
+    })
 };
